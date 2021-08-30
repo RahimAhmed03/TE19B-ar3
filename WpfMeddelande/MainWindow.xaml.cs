@@ -36,9 +36,10 @@ namespace WpfMeddelande
             // Läs in texten
             texten = rutaText.Text;
             System.Console.WriteLine(texten);
+            rutaText.Text = "";
 
             // Skriv i nedre rutan
-
+            rutaMeddelande.Text += "\n" + texten;
         }
     }
 }
