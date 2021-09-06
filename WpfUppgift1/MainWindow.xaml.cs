@@ -24,5 +24,12 @@ namespace WpfUppgift1
         {
             InitializeComponent();
         }
+
+
+        private void Click_KÖR(object sender, RoutedEventArgs e)
+        {
+            
+        }
+
     }
 }

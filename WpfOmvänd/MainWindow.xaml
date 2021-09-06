@@ -9,7 +9,7 @@
     <StackPanel Margin="10">
         <Label FontSize="25">Vända på text</Label>
                 <Label>Ange en text</Label>
-                <TextBox Name="rutaText" Height="50"></TextBox>
+                <TextBox Name="rutaText" Margin="5" Height="50"></TextBox>
             <Button Click="Click_KÖR" Margin="5">KÖR</Button>
                 <Label>Texten omvänd</Label>
                 <TextBox Name="omvändRuta" Margin="5" Height="50" IsReadOnly="True"></TextBox>
