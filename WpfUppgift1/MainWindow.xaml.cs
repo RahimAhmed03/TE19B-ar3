@@ -25,10 +25,41 @@ namespace WpfUppgift1
             InitializeComponent();
         }
 
-
         private void Click_KÖR(object sender, RoutedEventArgs e)
         {
-            
+            // Läs in text som ska krypteras
+            string text = rutaText.Text;
+
+            // Läs in nyckeln
+            string nyckelString = rutaNyckel.Text;
+
+            // Kolla om nyckeln verkligen är ett tal
+            int nyckel = 0;
+            while (!int.TryParse(nyckelString, out nyckel))
+            {
+                MessageBox.Show("Du måste mata in ett tal (1-9). Försök igen.");
+                nyckelString = rutaNyckel.Text;
+            }
+
+            // Kryptera tecken för tecken
+            string kryptadText = "";
+            for (int i = 0; i < text.Length; i++)
+            {
+                char bokstav = text[i];
+                int ascii = (int)bokstav;
+                int kryptadAscii = ascii + nyckel;
+
+                if (kryptadAscii >= 90)
+                {
+                    kryptadAscii -= 26;
+                }
+
+                char kryptadBokstav = (char)(kryptadAscii);
+                kryptadText += kryptadBokstav.ToString();
+            }
+
+            Console.WriteLine($"Den krypterade texten blir: {kryptadText}");
+            rutaKrypterad.Text = kryptadText;
         }
 
     }

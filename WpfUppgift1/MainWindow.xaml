@@ -5,20 +5,19 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfUppgift1"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="400" Width="300" Background="#EEE">
     <StackPanel Margin="10">
         <Label>Ceasarkrypto</Label>
 
         <Label>Ange en text</Label>
-        <TextBox Name="rutaText" Margin="5" Height="50"/>
+        <TextBox Name="rutaText" Margin="5" Height="50" TextWrapping="Wrap"/>
 
         <Label>Ange en nyckel(1-9)</Label>
-        <TextBox Name="rutaNyckel" Margin="5" Height="50" />
+        <TextBox Name="rutaNyckel" Margin="5" Height="30" />
 
         <Button Click="Click_KÖR" Margin="5">KÖR</Button>
 
         <Label>Krypterad text</Label>
-        <TextBox Name="rutaKrypterad" Margin="5" Height="50" AcceptsReturn="True" IsReadOnly="True" FontStyle="Italic"/>
+        <TextBox Name="rutaKrypterad" Margin="5" Height="50" AcceptsReturn="True" IsReadOnly="True" FontStyle="Italic" TextWrapping="Wrap"/>
     </StackPanel>
-
 </Window>
