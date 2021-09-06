@@ -1,0 +1,17 @@
+﻿<Window x:Class="WpfOmvänd.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfOmvänd"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="313" Width="286">
+    <StackPanel Margin="10">
+        <Label FontSize="25">Vända på text</Label>
+                <Label>Ange en text</Label>
+                <TextBox Name="rutaText" Height="50"></TextBox>
+            <Button Click="Click_KÖR" Margin="5">KÖR</Button>
+                <Label>Texten omvänd</Label>
+                <TextBox Name="omvändRuta" Margin="5" Height="50" IsReadOnly="True"></TextBox>
+    </StackPanel>
+</Window>
