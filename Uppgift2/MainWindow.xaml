@@ -16,10 +16,10 @@
         <TextBox Name="rutaTal2" Margin="5" Height="20" />
 
         <DockPanel HorizontalAlignment="Stretch" >
-            <Button Click="ClickPlus" Margin="5" Width="50" Height="50">+</Button>
-            <Button Click="ClickMinus" Margin="5" Width="50" Height="50">-</Button>
-            <Button Click="ClickGånger" Margin="5" Width="50" Height="50">*</Button>
-            <Button Click="ClickDividera" Margin="5" Width="50" Height="50">/</Button>
+            <Button Click="ClickPlus" Margin="5" Width="50" Height="30">+</Button>
+            <Button Click="ClickMinus" Margin="5" Width="50" Height="30">-</Button>
+            <Button Click="ClickGånger" Margin="5" Width="50" Height="30">*</Button>
+            <Button Click="ClickDividera" Margin="5" Width="50" Height="30">/</Button>
         </DockPanel>
         
 

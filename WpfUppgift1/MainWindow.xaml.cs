@@ -28,14 +28,14 @@ namespace WpfUppgift1
         private void Click_KÖR(object sender, RoutedEventArgs e)
         {
             // Läs in text som ska krypteras
-            string text = rutaText.Text;
+            string text = rutaText.Text.ToUpper;
 
             // Läs in nyckeln
             string nyckelString = rutaNyckel.Text;
 
             // Kolla om nyckeln verkligen är ett tal
             int nyckel = 0;
-            while (!int.TryParse(nyckelString, out nyckel))
+            while (!int.TryParse(nyckelString, out nyckel) || nyckel <= 0 || nyckel > 9)
             {
                 MessageBox.Show("Du måste mata in ett tal (1-9). Försök igen.");
                 nyckelString = rutaNyckel.Text;
