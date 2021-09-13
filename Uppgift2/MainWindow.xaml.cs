@@ -27,7 +27,7 @@ namespace Uppgift2
 
         private void ClickPlus(object sender, RoutedEventArgs e)
         {
-
+            
         }
         private void ClickMinus(object sender, RoutedEventArgs e)
         {
