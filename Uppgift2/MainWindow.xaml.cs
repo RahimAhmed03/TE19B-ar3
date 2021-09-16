@@ -27,7 +27,12 @@ namespace Uppgift2
 
         private void ClickPlus(object sender, RoutedEventArgs e)
         {
-            
+            string tal1 = rutaTal1.Text;
+            string tal2 = rutaTal2.Text;
+            string summa = tal1 + tal2;
+            rutaResultat.Text = summa;
+            Console.WriteLine($"{tal1} + {tal2} = {tal1 + tal2}");
+
         }
         private void ClickMinus(object sender, RoutedEventArgs e)
         {
