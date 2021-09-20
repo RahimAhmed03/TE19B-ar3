@@ -8,26 +8,26 @@
         Title="MainWindow" Height="450" Width="800">
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinitions Height="auto" />    
-            <RowDefinitions Height="auto" />    
-            <RowDefinitions Height="*" />    
-            <RowDefinitions Height="auto" />    
-            <RowDefinitions Height="auto" />
+            <RowDefinition Height="auto" />    
+            <RowDefinition Height="auto" />    
+            <RowDefinition Height="*" />    
+            <RowDefinition Height="auto" />    
+            <RowDefinition Height="auto" />
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
-            <ColumnDefinitions Height="auto" />    
-            <ColumnDefinitions Height="auto" />    
+            <ColumnDefinition Width="auto" />    
+            <ColumnDefinition Width="*" />    
         </Grid.ColumnDefinitions>   
 
-        <Label Grid.Row="0" Grid.ColumnSpan="2" Fontsize="24">Meddelande</Label>
+        <Label Margin="5" Grid.Row="0" Grid.ColumnSpan="2" FontSize="24">Meddelande</Label>
 
-        <Label Grid.Row="1" Grid.Column="0">Ange epostadress</Label>
-        <TextBox Grid.Row="1" Grid.Column="0" />
-        <Label Grid.Row="2" Grid.Column="0">Ange text</Label>
-        <TextBox Grid.Row="2" Grid.Column="1" MinHeight="50" />
+        <Label Margin="5" Grid.Row="1" Grid.Column="0">Ange epostadress</Label>
+        <TextBox Margin="5" Grid.Row="1" Grid.Column="1" />
+        <Label Margin="5" Grid.Row="2" Grid.Column="0">Ange text</Label>
+        <TextBox Margin="5" Grid.Row="2" Grid.Column="1" MinHeight="50" />
 
-        <Button Grid.Row="3" Grid.ColumnSpan="2">Skicka!</Button>
+        <Button Margin="5" Grid.Row="3" Grid.ColumnSpan="2">Skicka!</Button>
 
-        <TextBox Grid.Row="4" Grid.ColumnSpan="2" Foreground="#999" IsReadOnly="true"/>
+        <TextBox Margin="5" Grid.Row="4" Grid.ColumnSpan="2" Foreground="#999" IsReadOnly="true"/>
     </Grid>
 </Window>
