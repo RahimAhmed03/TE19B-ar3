@@ -10,7 +10,7 @@
         <Grid.RowDefinitions>
             <RowDefinitions Height="auto" />    
             <RowDefinitions Height="auto" />    
-            <RowDefinitions Height="auto" />    
+            <RowDefinitions Height="*" />    
             <RowDefinitions Height="auto" />    
             <RowDefinitions Height="auto" />
         </Grid.RowDefinitions>
@@ -21,7 +21,13 @@
 
         <Label Grid.Row="0" Grid.ColumnSpan="2" Fontsize="24">Meddelande</Label>
 
-        <Label Grid.Row="1" Grid.Column="0">Ange Postadress</Label>
+        <Label Grid.Row="1" Grid.Column="0">Ange epostadress</Label>
         <TextBox Grid.Row="1" Grid.Column="0" />
+        <Label Grid.Row="2" Grid.Column="0">Ange text</Label>
+        <TextBox Grid.Row="2" Grid.Column="1" MinHeight="50" />
+
+        <Button Grid.Row="3" Grid.ColumnSpan="2">Skicka!</Button>
+
+        <TextBox Grid.Row="4" Grid.ColumnSpan="2" Foreground="#999" IsReadOnly="true"/>
     </Grid>
 </Window>
