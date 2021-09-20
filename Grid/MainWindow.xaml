@@ -21,6 +21,7 @@
 
         <Label Grid.Row="0" Grid.ColumnSpan="2" Fontsize="24">Meddelande</Label>
 
-        <Label>Ange Postadress</Label>
+        <Label Grid.Row="1" Grid.Column="0">Ange Postadress</Label>
+        <TextBox Grid.Row="1" Grid.Column="0" />
     </Grid>
 </Window>
