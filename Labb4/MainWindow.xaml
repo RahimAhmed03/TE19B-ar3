@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Labb4"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="450" Width="800" Background="#EEE">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="auto" />    
@@ -25,14 +25,11 @@
         <Label Margin="5" Grid.Row="1" Grid.Column="0">Ange sökterm</Label>
         <TextBox Name="rutaSökterm" Margin="5" Grid.Row="1" Grid.Column="1" />
 
-        <Button Margin="5" Grid.Row="2" Grid.ColumnSpan="2" >Sök!</Button>
-
+        <Button Click="ClickSök" Margin="5" Grid.Row="2" Grid.ColumnSpan="2" >Sök!</Button>
 
         <Label Margin="5" Grid.Row="3" Grid.Column="0">Matchande Länder</Label>
         <TextBox Name="rutaResultat" Margin="5" Grid.Row="3" Grid.Column="1" Foreground="#999" IsReadOnly="true"/>
 
-        <TextBlock Margin="5" Grid.Row="4" Grid.ColumnSpan="2" Foreground="#999" Background="#FFF" Height="20"/>
-
-       
+        <TextBlock Name="rutaStatus" Margin="5" Grid.Row="4" Grid.ColumnSpan="2" Foreground="#999" Background="#FFF" Height="20"/>
     </Grid>
 </Window>
