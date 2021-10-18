@@ -41,7 +41,7 @@ namespace Labb5
             rutaLista.Text += $"{namn}\t{lön}\n";
 
             // lagra "{namn{\t{lön}" i lista
-            lista
+            //lista namnlista.Add($"{namn}\t{lön}");
         }
 
         private void ClickSpara(object sender, RoutedEventArgs e)
