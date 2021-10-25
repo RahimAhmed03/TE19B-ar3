@@ -6,6 +6,12 @@ using System.Text.RegularExpressions;
 
 namespace IntroJSON
 {
+
+    class Kontakt
+    {
+        public string Namn;
+        public string Mobil;
+    }
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
@@ -50,14 +56,25 @@ namespace IntroJSON
             Regex regex = new Regex(@"^\(?([0-9]{3})\)?[-]([0-9]{7})$");
             if (regex.IsMatch(mobil))
             {
-                // Fyll i rutaAllaKontakter
-                rutaAllaKontakter.Text += $"{namn}\t{mobil}\n";
-
                 // Fyll på namnet i listan
                 kontaktLista.Add($"{namn}\t{mobil}");
 
-                // Spara ned!
-                File.WriteAllLines(filen, kontaktLista);
+                // Fyll i rutaAllaKontakter
+                rutaAllaKontakter.Text += $"{namn}\t{mobil}\n";
+
+                // Konvertera till JSON
+                // 1. Skapa ett objekt
+                Kontakt objekt = new Kontakt();
+                objekt.Namn = namn;
+                objekt.Mobil = mobil;
+            
+                // {
+                //     Namn = namn,
+                //     Mobil = mobil 
+                // };
+                // 2. Skapa jsontext
+                // 3. Spara ned i fil
+                
             }
             else
             {
