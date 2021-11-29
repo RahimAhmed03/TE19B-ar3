@@ -1,4 +1,5 @@
-﻿using System;
+﻿using System.IO;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -32,7 +33,7 @@ namespace Labb5
         {
             // Läs in namnnet
             string namn = rutaNamn.Text;
-
+        
             // Läs in lönen
             string lön = rutaLön.Text;
 
@@ -41,12 +42,15 @@ namespace Labb5
             rutaLista.Text += $"{namn}\t{lön}\n";
 
             // lagra "{namn{\t{lön}" i lista
-            //lista namnlista.Add($"{namn}\t{lön}");
+            lista.Add($"{namn}\t{lön}");
+
+
         }
 
         private void ClickSpara(object sender, RoutedEventArgs e)
         {
-        
+            File.WriteAllLines("Personlön.txt", lista);
+            rutaFel.Text = "Lista har sparats som Personlön.txt";
         }
 
     }
