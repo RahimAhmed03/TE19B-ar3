@@ -1,20 +1,11 @@
-﻿using System;
+﻿/*  */
+
+using System;
 using System.Collections.Generic;
 
 namespace Labb_14
 {
 
-    class Bok
-    {
-        public string Titel { get; set; }
-        public string Författare { get; set; }
-        public int AntalSidor { get; set; }
-
-        public void Skrivut()
-        {
-            Console.WriteLine($"Boken heter {Titel}, författaren är {Författare} och antal sidor är {AntalSidor}");
-        }
-    }
     class Program
     {
         static void Main(string[] args)
@@ -23,33 +14,35 @@ namespace Labb_14
 
             while (true)
             {
-                Bok objekt = new Bok();
 
                 // Ange Titel
                 Console.Write("Ange bokens Titel: ");
-                objekt.Titel = Console.ReadLine();
+                string titel = Console.ReadLine();
 
                 // Avbryt om namn är tomt
-                if (objekt.Titel == "")
+                if (titel == "")
                 {
                     break;
                 }
 
                 // Ange Författare
                 Console.Write("Ange namnet på författare: ");
-                objekt.Författare = Console.ReadLine();
+                string författare = Console.ReadLine();
 
                 // Ange AntalSidor
                 Console.Write("Ange Antalet sidor boken har: ");
-                objekt.AntalSidor = Console.ReadLine();
+                int antalSidor = int.Parse(Console.ReadLine());
+                
+                // Skapa ett objekt = bok av typen Bok
+                // bok heter också instans av Bok;
+                // Skapa och ge värdena samtidigt!                
 
-                lista.Add(objekt);
+                Bok bok = new Bok(titel, författare, antalSidor);
             }
             foreach (var bok in lista)
             {
                 bok.Skrivut();
             }
-            Console.WriteLine("Hello World!");
         }
     }
 }

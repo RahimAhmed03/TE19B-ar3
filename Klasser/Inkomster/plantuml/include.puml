@@ -1,0 +1,11 @@
+@startuml
+skinparam ClassAttributeIconSize 0
+skinparam Monochrome true
+hide circle
+class PersonInkomst {
+    + Namn : string <<get>> <<set>>
+    + Lön : int <<get>> <<set>>
+    + Timmar : int <<get>> <<set>>
+    + VisaTimlön() : void
+}
+@enduml
