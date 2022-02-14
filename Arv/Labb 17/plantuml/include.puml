@@ -1,0 +1,22 @@
+@startuml
+class GameObject {
+    + IsDead : bool <<get>> <<set>>
+    + Position : Vector2 <<get>> <<set>>
+    + Radius : float <<get>> <<set>>
+    + Speed : Vector2 <<get>> <<set>>
+    + Rotation : float <<get>> <<set>>
+    + collideswith(other:IGameObject) : bool
+}
+interface IGameObject {
+}
+class Meteor {
+    + Type : MeteorType <<get>> <<set>>
+    + ExplosionScale : float <<get>> <<set>>
+    + Meter(type:MeteorType) : void
+    + Update(gamtime:GameTime) : void
+    + BreakMeteor(meteor:Meteor) : IEnumerable<Meteor>
+}
+class GameTime {
+}
+GameObject <|-- Meteor
+@enduml
