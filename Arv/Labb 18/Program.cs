@@ -19,13 +19,14 @@ namespace Labb_18
         }
     }
 
-    class Knight : Creature
+    public class Knight : Creature
     {
         protected string Weapon { get; set; }
 
-        public Knight(string name, string weapon)
+        public Knight(string name, string weapon) : base(name)
         {
             Name = name;
+            Weapon = weapon;
 
         }
         public void Attack()
@@ -34,18 +35,27 @@ namespace Labb_18
         }
     }
 
-    class Dragon : Creature
+    public class Dragon : Creature
     {
-        protected string color { get; set; }
+        protected string Color { get; set; }
 
-        public Dragon(string name, string color)
+        public Dragon(string name, string color) : base(name)
         {
             Name = name;
+            Color = color;
         }
         
         public void Attack()
         {
 
+        }
+
+        class Program
+        {
+            static void Main(string[] args)
+            {
+                Console.WriteLine("a");
+            }
         }
     }
 }
