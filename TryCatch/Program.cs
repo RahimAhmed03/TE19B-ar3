@@ -13,10 +13,13 @@ namespace TryCatch
                 string[] input = Console.ReadLine().Split(" ");
 
                 // Kolla att vi fick två textbitar
-                if (input.Length == 2)
+                if (input.Length == 4)
                 {
-                    // lagra i en instans (objekt)
-                    Person person = new Person(input[0], input[1]);
+                    // Lagra i en instans (objekt)
+                    Arbetare arbetare = new Arbetare(input[0], input[1], input[2], input[3]);
+
+                    // Skriv ut timlön
+                    Console.WriteLine($"Din timlön blir {arbetare.RäknaTimlön()}");
                 }
                 else
                 {
