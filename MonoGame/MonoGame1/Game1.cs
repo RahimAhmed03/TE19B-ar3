@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Numerics;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
@@ -17,6 +16,8 @@ namespace MonoGame1
         private Texture2D jumpingTexture;
         private Texture2D crouchTexture;
         private Texture2D fireballTexture;
+        private Texture2D currentTexture;
+        private SpriteFont font;
 
         private List<Vector2> fireballs;
         private int fireballTimer = 120;
@@ -51,6 +52,7 @@ namespace MonoGame1
             jumpingTexture = Content.Load<Texture2D>("jump");
             crouchTexture = Content.Load<Texture2D>("crouch");
             fireballTexture = Content.Load<Texture2D>("fireball");
+            font = Content.Load<SpriteFont>("font");
         }
 
         protected override void Update(GameTime gameTime)
@@ -59,7 +61,7 @@ namespace MonoGame1
                 Exit();
 
             position += speed;
-            if(position.Y > 200)
+            if (position.Y > 200)
             {
                 position = new Vector2(position.X, 200);
                 speed = Vector2.Zero;
@@ -73,7 +75,7 @@ namespace MonoGame1
                 speed = new Vector2(0, -5.0f);
                 isJumping = true;
             }
-            if(state.IsKeyDown(Keys.S) && !isJumping)
+            if (state.IsKeyDown(Keys.S) && !isJumping)
             {
                 isCrouching = true;
             }
@@ -87,13 +89,50 @@ namespace MonoGame1
             if (fireballTimer <= 0)
             {
                 fireballTimer = 120;
-                fireballs.Add(new Vector2(800,200));
+                if (rnd.Next(2) == 0)
+                {
+                    fireballs.Add(new Vector2(800, 200));
+                }
+                else
+                {
+                    fireballs.Add(new Vector2(800, 240));
+                }
             }
 
             for (int i = 0; i < fireballs.Count; i++)
             {
                 fireballs[i] = fireballs[i] + new Vector2(-2, 0);
             }
+
+            //collision
+    
+            if (isJumping)
+            {
+                currentTexture = jumpingTexture;
+            }
+            else if (isCrouching)
+            {
+                currentTexture = crouchTexture;
+            }
+            else
+            {
+                currentTexture = normalTexture;
+            }
+
+           /*  Rectangle playerBox = new Rectangle((int)position.X, (int)position.Y, 48, 60);
+            Rectangle meteorBox = new Rectangle((int)meteorX, (int)meteorY, 110, 110);
+
+            //Överlappar vi?
+            kollision = Intersection(playerBox, meteorBox);
+
+            if (kollision.Width > 0 && kollision.Height > 0)
+            {
+                Rectangle r1 = Normalize(playerBox, kollision);
+                Rectangle r2 = Normalize(meteorBox, kollision);
+                bHit = TestCollision(ship, r1, meteor, r2);
+            }
+            else
+                bHit = false; */
 
             base.Update(gameTime);
         }
@@ -104,25 +143,17 @@ namespace MonoGame1
 
             spriteBatch.Begin();
 
-            if (isJumping)
-            {
-                spriteBatch.Draw(jumpingTexture, position, Color.White);
-            }
-            else if (isCrouching)
-            {
-                spriteBatch.Draw(crouchTexture, position, Color.White);
-            }
-            else
-            {
-                spriteBatch.Draw(normalTexture, position, Color.White);
-            }
+            spriteBatch.DrawString(font, ((int)gameTime.TotalGameTime.TotalSeconds).ToString(), new Vector2(10, 20), Color.White);
+
+            spriteBatch.Draw(currentTexture, position, Color.White);
+
 
             foreach (var fireball in fireballs)
             {
                 spriteBatch.Draw(fireballTexture, fireball, Color.White);
-                
+
             }
-            
+
             spriteBatch.End();
 
             base.Draw(gameTime);
